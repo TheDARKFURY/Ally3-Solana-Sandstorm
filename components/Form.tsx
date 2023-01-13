@@ -164,10 +164,10 @@ export const Form = () => {
           />
         </div>
         {/**************************/}
-        <div className="flex flex-col justify-center space-y-3 pt-5">
+        {/* <div className="flex flex-col justify-center space-y-3 pt-5">
           <h1 className=" text-[#C0C0C0] flex space-x-2 justify-start items-baseline">
-            <span className="text-2xl">ContributionPower</span>
-            <BsExclamationCircleFill />{"0"}
+            <span className="text-2xl">Contribution-Power</span>
+            <BsExclamationCircleFill />{""}
           </h1>
           <input
             type="number"
@@ -176,7 +176,7 @@ export const Form = () => {
             className="w-full rounded-xl h-14 bg-transparent text-[#939393]  outline outline-[#939393] px-4"
             placeholder="Give CPs"
           />
-        </div>
+        </div> */}
         {/**************************/}
         <div className="flex flex-col justify-center space-y-3 py-6">
           <h1 className=" text-[#C0C0C0] flex space-x-2 justify-start items-baseline">
@@ -209,12 +209,12 @@ export const Form = () => {
                   <span className="text-2xl">Added Members</span>
                   <BsExclamationCircleFill />{" "}
                 </h1>
-                <button
+                {/* <button
                   onClick={() => setForm(true)}
                   className="bg-[#6758E5FD] w-20 h-7 rounded-lg flex justify-center items-center font-normal text-white font-Outfit"
                 >
                   + Add
-                </button>
+                </button> */}
               </div>
             </>
           )}
@@ -244,8 +244,8 @@ export const Form = () => {
                       </span>
                     </h1>
                     <h1 className="text-lg flex space-x-1">
-                      <span className="text-[#636363]">XPs:</span>
-                      <span className="text-white font-normal">{xp}</span>
+                      <span className="text-[#636363]">CPs:</span>
+                      <span className="text-white font-normal">{ContributionPower}</span>
                     </h1>
                   </div>
                   <h1
@@ -367,9 +367,9 @@ export const Form = () => {
                             </p>
                           </div>
                           <input
-                            type="tel"
+                            type="number"
                             onChange={(e) =>
-                              setMemberXP(parseInt(e.target.value))
+                              dispatch(addContributionPower(e.target.value))
                             }
                             placeholder="Enter XPs"
                             className="w-full rounded-xl h-10 bg-transparent text-[#939393]  outline-none outline-[#939393] px-4"
