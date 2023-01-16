@@ -42,7 +42,7 @@ async function uploadImage(dataSrc) {
 	return url
 }	
 
-async function collabNftMetadata(name: string, description: string, ipfsImage: MetaplexFile, metaplex: Metaplex, contributionPower: number) {
+async function collabNftMetadata(name: string, description: string, github:string ,ipfsImage: MetaplexFile, metaplex: Metaplex, contributionPower: number) {
 	try {
 		const { uri } = await metaplex.nfts().uploadMetadata({
 			name: name,
@@ -52,6 +52,10 @@ async function collabNftMetadata(name: string, description: string, ipfsImage: M
 				{
 					"trait_type": "Contribution-Power",
 					"value": contributionPower.toString(),
+				},
+				{
+					"trait_type": "GitHub URL",
+					"value": github.toString(),
 				}
 				
 			],
@@ -67,7 +71,7 @@ function sleep(ms: number) {
 	return new Promise(resolve => setTimeout(resolve, ms));
  }
 
-async function creteNfts(metadata: any, title: string, cps: number, metaplex: Metaplex, members) {	
+async function creteNfts(metadata: any, title: string, cps: number, git: string ,metaplex: Metaplex, members) {	
 	const transactions = [];
 	const tx = metaplex.nfts().create({
 		uri: metadata,
