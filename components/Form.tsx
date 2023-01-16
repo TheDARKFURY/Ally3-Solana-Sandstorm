@@ -7,6 +7,7 @@ import { AdminSuccess } from "./AdminSuccess";
 import {
   addCollabName,
   addDescription,
+  addGitHub,
   addLeadName,
   addContributionPower
 } from "../features/collabInfo";
@@ -48,6 +49,7 @@ export const Form = () => {
   const memberCount = useAppSelector((state) => state.FormReducers.memberCount);
   const Title = useAppSelector((state) => state.collabInfo.collabName);
   const Description = useAppSelector((state) => state.collabInfo.Description);
+  const GitHub = useAppSelector((state) => state.collabInfo.GitHub);
   const AdminWallet = useAppSelector((state) => state.collabInfo.AdminWallet);
   const LeadName = useAppSelector((state) => state.collabInfo.LeadName);
   const ContributionPower = useAppSelector((state) => state.collabInfo.ContributionPower);
@@ -121,12 +123,13 @@ export const Form = () => {
     const metadataUri = await collabNftMetadata(
       Title,
       Description,
+      GitHub,
       files,
       metaplex,
       ContributionPower,
     );
     console.log("Here ===> ", metadataUri);
-    await creteNfts(metadataUri.uri, Title, ContributionPower , metaplex, Members);
+    await creteNfts(metadataUri.uri, Title, ContributionPower , GitHub ,metaplex, Members);
     setLoading(false);
   };
   return (
@@ -164,6 +167,19 @@ export const Form = () => {
           />
         </div>
         {/**************************/}
+        <div className="flex flex-col justify-center space-y-3 pt-5">
+          <h1 className=" text-[#C0C0C0] flex space-x-2 justify-start items-baseline">
+            <span className="text-2xl">GitHub URL</span>
+            <BsExclamationCircleFill />{" "}
+          </h1>
+          <input
+            type="text"
+            name="GitHub"
+            onChange={(e) => dispatch(addGitHub(e.target.value))}
+            className="w-full rounded-xl h-14 bg-transparent text-[#939393]  outline outline-[#939393] px-4"
+            placeholder="Enter GitHub URL"
+          />
+        </div>
         {/* <div className="flex flex-col justify-center space-y-3 pt-5">
           <h1 className=" text-[#C0C0C0] flex space-x-2 justify-start items-baseline">
             <span className="text-2xl">Contribution-Power</span>
@@ -206,7 +222,7 @@ export const Form = () => {
             <>
               <div className="flex space-x-2 items-center">
                 <h1 className=" text-[#C0C0C0] flex space-x-2 justify-start items-baseline">
-                  <span className="text-2xl">Added Members</span>
+                  <span className="text-2xl">Added Member</span>
                   <BsExclamationCircleFill />{" "}
                 </h1>
                 {/* <button
@@ -390,7 +406,7 @@ export const Form = () => {
                           }}
                           className="font-medium  font-Outfit text-white w-full bg-[#5439CE] p-2 rounded-3xl"
                         >
-                          Add member +
+                          Add member
                         </button>
                       </div>
                     </div>
