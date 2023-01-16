@@ -63,11 +63,11 @@ export const Preview = () => {
 								ContributionPower- <span>{cps}</span>
 							</h3>
 						)}
-						{git != '' && (
+						{/* {git != '' && (
 							<h3 className='flex justify-center font-extrabold text-white font-Lexend text-xl pt-3'>
 								GitHub URL - <span>{git}</span>
 							</h3>
-						)}
+						)} */}
 						<p className='flex justify-center items-center text-center text-white font-outfit font-normal py-3'>
 							{desc}
 						</p>
