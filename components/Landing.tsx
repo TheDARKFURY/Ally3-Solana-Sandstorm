@@ -49,6 +49,20 @@ export const Landing = () => {
 						{' '}
 						<WalletMultiButton className={styles.btn}/>
 					</div>
+					<div>
+						<p className=' text-xl 2xl:text-3xl xl:text-xl font-medium capitalize  font-Lexend flex flex-row gap-x-3 '>
+						<span className='text-transparent bg-clip-text superdes tracking-tighter '>
+								{'Check your Contribution Power here '}
+							</span>
+						</p>
+						<br />
+					<input type="text" name="Ally3" className="w-full rounded-xl h-14 bg-transparent text-[#939393] outline outline-[#939393] px-4" placeholder="Enter Wallet Address here">
+						</input>
+						<br />
+						<br />
+						<div className="flex justify-center relative "> 
+						<button className="wallet-adapter-button ConnectBtn_btn__9N7zE" type="button"><i className="wallet-adapter-button-start-icon"></i>Check CPs</button></div>
+					</div>
 				</main>
 			</div>
 		</>
