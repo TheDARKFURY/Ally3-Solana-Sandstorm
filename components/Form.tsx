@@ -207,15 +207,27 @@ export const Form = () => {
             placeholder="Write collab description"
           />
         </div>
-
         <div>
+        <button
+                // onClick={}
+                className={styles.btn}
+              >
+                Add Leader
+              </button>
+        </div>
+        <br />
+        <hr className=" border border-borderline" />
+        <div>
+        <p className="text-white py-5 text-2xl xl:text-3xl font-Outfit font-medium ">
+          Add Contributor
+        </p>
           {memberCount === 0 ? (
             <>
               <button
                 onClick={() => setForm(true)}
                 className={styles.btn}
               >
-                Add Member
+                Add Contributor
               </button>
             </>
           ) : (
