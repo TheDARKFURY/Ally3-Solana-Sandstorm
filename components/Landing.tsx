@@ -84,7 +84,7 @@ export const Landing = () => {
                 <i className="wallet-adapter-button-start-icon"></i>
                 Check CPs
               </button>
-            </div>
+            </div> 
           </div> */}
         </main>
       </div>
