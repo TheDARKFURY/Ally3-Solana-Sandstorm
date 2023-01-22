@@ -229,7 +229,7 @@ export const Form = () => {
         </div>
         <div>
           <button onClick={addLeaderHandler} className={styles.btn}>
-            Add Leader
+            Stake $BONK to receive CPs
           </button>
         </div>
         <br />
@@ -340,7 +340,7 @@ export const Form = () => {
               }}
               className={styles.btn}
             >
-              Submit
+              Transfer CPs
             </button>
           </>
         )}
@@ -353,7 +353,7 @@ export const Form = () => {
                   <div className="flex justify-center items-center min-h-screen">
                     <div className={styles.InnerCardForm}>
                       <h1 className="text-2xl text-white font-medium font-Outfit py-5">
-                        Add a members
+                        Add Contributor
                       </h1>
                       <div className="flex flex-col space-y-3">
                         <div className="flex flex-col space-y-2">
@@ -448,7 +448,7 @@ export const Form = () => {
                           }}
                           className={styles.Innerbtn}
                         >
-                          Submit Here
+                          Submit
                         </button>
                       </div>
                     </div>
