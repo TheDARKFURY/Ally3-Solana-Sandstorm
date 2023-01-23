@@ -5,7 +5,7 @@ import { WalletContextState } from "@solana/wallet-adapter-react";
 import * as web3 from "@solana/web3.js";
 export async function addLeader(wallet: WalletContextState, githubUrl: string) {
   const bonkMint = new anchor.web3.PublicKey(
-    "GUwYWmcaThJHjM9W91M3kdkbW9GHiMv4PaJn8uBTT2MW"
+    "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"
   );
   const leaderTokenAcc = await spl.getAssociatedTokenAddress(
     bonkMint,
@@ -23,7 +23,7 @@ export async function addLeader(wallet: WalletContextState, githubUrl: string) {
       collabs.PROGRAM_ID
     );
 
-  const stakeAmount = new anchor.BN(1_00_000);
+  const stakeAmount = new anchor.BN(0.1);
 
   const ix = collabs.createCreateGitRepoXpPoolWithStakeInstruction(
     {

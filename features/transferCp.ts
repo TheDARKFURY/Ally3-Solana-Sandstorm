@@ -9,7 +9,7 @@ export async function transferCp(
   xp: number
 ) {
   const bonkMint = new anchor.web3.PublicKey(
-    "GUwYWmcaThJHjM9W91M3kdkbW9GHiMv4PaJn8uBTT2MW"
+    "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"
   );
   const leaderTokenAcc = await spl.getAssociatedTokenAddress(
     bonkMint,
