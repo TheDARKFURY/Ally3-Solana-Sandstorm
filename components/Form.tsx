@@ -234,17 +234,18 @@ export const Form = () => {
         </div>
         <br />
         <hr className=" border border-borderline" />
+        <br />
         <div>
-          <p className="text-white py-5 text-2xl xl:text-3xl font-Outfit font-medium ">
+          {/* <p className="text-white py-5 text-2xl xl:text-3xl font-Outfit font-medium ">
             Add Contributor
-          </p>
+          </p> */}
           {memberCount === 0 ? (
             <>
               <button
                 onClick={() => {
                   setForm(true);
                 }}
-                className={styles.btn}
+                className={styles.btn1}
               >
                 Add Contributor
               </button>
