@@ -16,7 +16,7 @@ import {
 	PublicKey,
 } from '@solana/web3.js'
 
-const connection = new Connection(clusterApiUrl('devnet'), 'confirmed')
+const connection = new Connection("https://rpc.helius.xyz/?api-key=52d3aae3-07be-4900-a393-49d36a260649", 'confirmed')
 
 async function createWalletAndAirdrop() {
 	const wallet = Keypair.generate()

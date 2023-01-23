@@ -65,15 +65,15 @@ export const Form = () => {
 
   const wallet = useWallet();
 
-  const connection = new Connection(clusterApiUrl("devnet"));
+  const connection = new Connection("https://rpc.helius.xyz/?api-key=52d3aae3-07be-4900-a393-49d36a260649");
   const metaplex = Metaplex.make(connection)
     .use(walletAdapterIdentity(wallet))
     .use(bundlrStorage());
 
   metaplex.use(
     bundlrStorage({
-      address: "https://devnet.bundlr.network",
-      providerUrl: "https://api.devnet.solana.com",
+      address: "https://node1.bundlr.network",
+      providerUrl: "https://rpc.helius.xyz/?api-key=52d3aae3-07be-4900-a393-49d36a260649",
       timeout: 60000,
     })
   );

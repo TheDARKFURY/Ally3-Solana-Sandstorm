@@ -23,7 +23,7 @@ import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
 import Router from 'next/router'
 function MyApp({ Component, pageProps }: AppProps) {
-	const network = WalletAdapterNetwork.Devnet
+	const network = WalletAdapterNetwork.Mainnet
 
 	const endpoint = useMemo(() => clusterApiUrl(network), [network])
 	const wallets = useMemo(

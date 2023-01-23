@@ -45,7 +45,7 @@ export async function addLeader(wallet: WalletContextState, githubUrl: string) {
   tx.add(ix);
   const sig = await wallet.sendTransaction(
     tx,
-    new anchor.web3.Connection(anchor.web3.clusterApiUrl("devnet"))
+    new anchor.web3.Connection("https://rpc.helius.xyz/?api-key=52d3aae3-07be-4900-a393-49d36a260649")
   );
   console.log(sig);
 }
