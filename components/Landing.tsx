@@ -18,6 +18,7 @@ export const Landing = () => {
   const [contributorAddress, setContributorAddress] = useState(null);
   const dispatch = useAppDispatch();
   const { publicKey, connected, connect } = useWallet();
+  const [xp,setXp] = useState("");
   const onChangeCpHandler = (event) => {
     const contributorPubkey = new anchor.web3.PublicKey(event.target.value);
     console.log(contributorPubkey.toBase58());
@@ -25,8 +26,9 @@ export const Landing = () => {
   };
 
   const checkCphandler = () => {
-    checkContributionPower(contributorAddress).then(() => {
+    checkContributionPower(contributorAddress).then((value) => {
       console.log("checked");
+      setXp(value);
     });
   };
   useEffect(() => {
@@ -59,7 +61,7 @@ export const Landing = () => {
             {" "}
             <WalletMultiButton className={styles.btn} />
           </div>
-          {/* <div>
+          <div>
             <p className=" text-xl 2xl:text-3xl xl:text-xl font-medium capitalize  font-Lexend flex flex-row gap-x-3 ">
               <span className="text-transparent bg-clip-text superdes tracking-tighter ">
                 {"Check your Contribution Power here "}
@@ -85,7 +87,7 @@ export const Landing = () => {
                 Check CPs
               </button>
             </div> 
-          </div> */}
+          </div>
         </main>
       </div>
     </>

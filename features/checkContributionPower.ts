@@ -18,4 +18,5 @@ export async function checkContributionPower(
       contributorPda
     );
   console.log(contributorAccount.xp.toString());
+  return contributorAccount.xp.toString()
 }
