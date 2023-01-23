@@ -17,6 +17,7 @@ export async function addLeader(wallet: WalletContextState, githubUrl: string) {
     collabs.PROGRAM_ID
   );
   console.log("leader:", wallet.publicKey.toBase58());
+  alert("1_00_000 BONK will be Staked");
   const [BonkEscrowpda, Bonkbump] =
     anchor.web3.PublicKey.findProgramAddressSync(
       [Buffer.from("total_bonk_stake"), wallet.publicKey.toBuffer()],

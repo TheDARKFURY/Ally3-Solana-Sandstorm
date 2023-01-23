@@ -122,6 +122,7 @@ export const Form = () => {
   const addLeaderHandler = () => {
     addLeader(wallet, GitHub).then(() => {
       console.log("added leader");
+      alert("Bonk Staked Successfully");
     });
   };
 
@@ -446,6 +447,7 @@ export const Form = () => {
                               xp
                             );
                             console.log("done cp account");
+                            alert("Contributor details added");
                           }}
                           className={styles.Innerbtn}
                         >
